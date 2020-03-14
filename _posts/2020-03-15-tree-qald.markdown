@@ -71,10 +71,10 @@ This is called [Relation Extraction](http://nlpprogress.com/english/relationship
 For starters, there's PATTY [[3]](#3). It contains about 120000 patterns and their corresponding relations. However, pattern-based approaches are historically [[4]](#4) not robust enough, especially since PATTY contains declarative texts, which are often too different from our interrogative texts.
 
 Other datasets I've considered are:
-- Tacred [[5]](#5) [download](https://catalog.ldc.upenn.edu/LDC2018T24)  Relatively large texts with annotated subjects, entities and the relation between. Relations follow a custom taxonomy.
-- NYT10  [[6]](#6) [download](http://iesl.cs.umass.edu/riedel/ecml)  Medium sized texts with annotated subjects, objects and relations, all part of [Freebase](https://developers.google.com/freebase).
-- Fewrel [[7]](#7) [download](https://github.com/thunlp/FewRel/tree/master/data) Similar but with [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) resources.
-- SimpleQuestions  [download](https://research.fb.com/downloads/babi/) Not really a relation extraction dataset, but can be used with some preprocessing.
+- Tacred [[5]](#5) [(download link)](https://catalog.ldc.upenn.edu/LDC2018T24)  Relatively large texts with annotated subjects, entities and the relation between. Relations follow a custom taxonomy.
+- NYT10  [[6]](#6) [(download link)](http://iesl.cs.umass.edu/riedel/ecml)  Medium sized texts with annotated subjects, objects and relations, all part of [Freebase](https://developers.google.com/freebase).
+- Fewrel [[7]](#7) [(download link)](https://github.com/thunlp/FewRel/tree/master/data) Similar but with [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) resources.
+- SimpleQuestions  [(download link)](https://research.fb.com/downloads/babi/) Not really a relation extraction dataset, but can be used with some preprocessing.
 
 The main problem is they all represent relations of different knowledge bases: Freebase, DBpedia, Wikidata (and the Tacred custom). In order to use these for DBPedia,
 I've created a dataset that unifies cross-knowledge-base equivalent relations and organizes them in equivalence sets. This dataset was formed by aggregating other equivalency sources [[8]](#8), using the [owl:equivalentProperty](http://www.w3.org/2002/07/owl#equivalentProperty) property and by manually searching. You can see this dataset in [equivalent_relations.json](https://github.com/StanciuMarius/tree-qald/blob/master/datasets/relation_extraction/cross_kb_relations/data/equivalent_relations.json)
